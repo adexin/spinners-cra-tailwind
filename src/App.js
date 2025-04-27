@@ -1,23 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { SpinnerCircularFixed } from "spinners-react";
+import "./App.css";
 
 function App() {
+  const message = "Redirect login page...";
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex h-full w-full flex-col items-center justify-center gap-4">
+      <SpinnerCircularFixed size={50} thickness={200} color="#0c4180" />
+      {message && (
+        <div className="type-h4-600 text-[var(--text-primary)]">{message}</div>
+      )}
     </div>
   );
 }
